@@ -4,43 +4,42 @@ function submit() {
   const form = document.getElementById('form');
   const secondAnimate = document.getElementById('secondWrap');
   button.addEventListener('click', () => {
-
     const email = input.value.trim();
     const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
     if (isValidEmail) {
-      form.style.display = 'none';
+      form.style.display = 'none'; // Скрываем форму
+
+      // Плавное добавление SVG через requestAnimationFrame
       requestAnimationFrame(() => {
         secondAnimate.innerHTML = `
-          <img src="img/second.svg" id="second" alt=""
-               style="width: 100%; height: 100vh;">
+          <img src="img/second.svg" alt="" style="width: 100%; height: 100vh;">
         `;
       });
     }
-  })
+  });
 }
-
 
 function startAnimation() {
   const firstAnimate = document.getElementById('first');
   const form = document.getElementById('form');
-  form.style.display = 'none';
 
+  form.style.display = 'none'; // Скрываем форму
+
+  // Плавное добавление SVG через requestAnimationFrame
   requestAnimationFrame(() => {
     firstAnimate.innerHTML = `
-          <img src="img/first.svg" id="first" alt=""
-       style="
-    width: 100%;
-    height: 100vh;
-">
-        `;
+      <img src="img/first.svg" alt="" style="width: 100%; height: 100vh;">
+    `;
   });
 
+  // Задержка перед скрытием первого анимационного элемента
   setTimeout(() => {
-    firstAnimate.remove()
-    form.style.display = 'flex';
-  }, 4500)
+    firstAnimate.style.display = 'none'; // Скрываем первое изображение
+    form.style.display = 'flex'; // Показываем форму
+  }, 4500); // 4.5 секунды для завершения анимации
 }
 
-startAnimation()
-submit()
+// Запускаем анимацию и обработчик отправки формы
+startAnimation();
+submit();
