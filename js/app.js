@@ -12,8 +12,9 @@ function submit() {
 
       // Плавное добавление SVG через requestAnimationFrame
       requestAnimationFrame(() => {
+        const x = Math.round(Math.random() * 5);
         secondAnimate.innerHTML = `
-          <img src="img/second.svg" alt="" style="width: 100%; height: 100vh;">
+          <img src="img/second.svg?v=${x}" alt="" style="width: 100%; height: 100vh;">
         `;
       });
     }
