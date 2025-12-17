@@ -39,7 +39,7 @@ function startAnimation() {
   setTimeout(() => {
     firstAnimate.style.display = 'none';
     form.style.display = 'flex';
-  }, 4000)
+  }, 4500)
 }
 
 startAnimation()
