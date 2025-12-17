@@ -26,11 +26,12 @@ function startAnimation() {
   const form = document.getElementById('form');
 
   form.style.display = 'none'; // Скрываем форму
+  const x = Math.round(Math.random() * 5);
 
   // Плавное добавление SVG через requestAnimationFrame
   requestAnimationFrame(() => {
     firstAnimate.innerHTML = `
-      <img src="img/first.svg" alt="" style="width: 100%; height: 100vh;">
+      <img src="img/first.svg?v=${x}" alt="" style="width: 100%; height: 100vh;">
     `;
   });
 
