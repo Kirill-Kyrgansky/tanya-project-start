@@ -25,6 +25,17 @@ function startAnimation() {
   const firstAnimate = document.getElementById('first');
   const form = document.getElementById('form');
   form.style.display = 'none';
+
+  requestAnimationFrame(() => {
+    firstAnimate.innerHTML = `
+          <img src="img/first.svg" id="first" alt=""
+       style="
+    width: 100%;
+    height: 100vh;
+">
+        `;
+  });
+
   setTimeout(() => {
     firstAnimate.style.display = 'none';
     form.style.display = 'flex';
