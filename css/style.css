@@ -318,6 +318,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
 }
 
 .input {
@@ -325,6 +326,7 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 5px;
+
   >input {
     border: none;
     width: 100%;
@@ -334,4 +336,7 @@ body {
     background: #000;
     color: #fff;
   }
+}
+input:focus{
+  outline: none;
 }
