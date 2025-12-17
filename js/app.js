@@ -12,7 +12,7 @@ function submit() {
       form.style.display = 'none';
       requestAnimationFrame(() => {
         secondAnimate.innerHTML = `
-          <img src="/img/second.svg" id="second" alt=""
+          <img src="img/second.svg" id="second" alt=""
                style="width: 100%; height: 100vh;">
         `;
       });
